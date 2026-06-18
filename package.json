@@ -1,0 +1,21 @@
+{
+  "name": "wc2026-stats",
+  "version": "0.1.0",
+  "description": "FIFA World Cup 2026 Stats & Live Scores Apify Actor",
+  "main": "dist/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "test:api": "ts-node src/test.ts"
+  },
+  "dependencies": {
+    "apify": "^3.2.6",
+    "axios": "^1.7.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/node": "^20.14.15",
+    "ts-node": "^10.9.2"
+  }
+}
