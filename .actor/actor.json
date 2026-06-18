@@ -1,0 +1,21 @@
+{
+  "actorSpecification": 1,
+  "name": "wc2026-stats",
+  "title": "FIFA World Cup 2026 Stats & Live Scores",
+  "description": "Fetch FIFA World Cup 2026 live scores, match stats, events, standings, and goals as clean JSON. Powered by football-data.org.",
+  "version": "0.2.0",
+  "buildTag": "latest",
+  "categories": ["SPORTS"],
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "env": {
+    "FOOTBALL_DATA_API_KEY": {
+      "description": "API key for football-data.org. Get a free key at football-data.org. Can also be passed via the footballDataApiKey input field.",
+      "isSecret": true
+    }
+  }
+}

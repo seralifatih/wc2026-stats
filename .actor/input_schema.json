@@ -1,0 +1,41 @@
+{
+  "title": "FIFA World Cup 2026 Stats Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "footballDataApiKey": {
+      "title": "Football-Data API Key",
+      "type": "string",
+      "description": "Your API key from football-data.org. Get a free key at football-data.org — takes 30 seconds, no credit card.",
+      "editor": "textfield",
+      "isSecret": true
+    },
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "Which data to fetch.",
+      "editor": "select",
+      "enum": ["live", "match", "standings", "full"],
+      "enumTitles": [
+        "Live matches",
+        "Single match detail",
+        "Group stage standings",
+        "Full match history (completed matches)"
+      ],
+      "default": "live"
+    },
+    "matchId": {
+      "title": "Match ID",
+      "type": "integer",
+      "description": "Match ID to fetch. Required when mode is 'match'.",
+      "editor": "number"
+    },
+    "teamId": {
+      "title": "Team ID",
+      "type": "integer",
+      "description": "Optional team ID filter for completed matches (mode: full).",
+      "editor": "number"
+    }
+  },
+  "required": ["mode"]
+}
