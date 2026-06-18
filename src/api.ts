@@ -14,10 +14,10 @@ export class FootballDataClient {
   private lastRequestAt = 0;
 
   constructor(apiKey?: string) {
-    const key = apiKey ?? process.env['FOOTBALL_DATA_API_KEY'];
-    if (!key) {
-      throw new Error('FOOTBALL_DATA_API_KEY is required. Get a free key at football-data.org.');
-    }
+    const key =
+      apiKey ||
+      process.env['FOOTBALL_DATA_API_KEY'] ||
+      'a64512ea36fa4b1db4cfa542b9b4d399';
 
     this.http = axios.create({
       baseURL: BASE_URL,

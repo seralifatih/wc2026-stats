@@ -23,20 +23,17 @@ Get FIFA World Cup 2026 match data, live scores, goals, bookings, and standings 
 
 ## How to use
 
-### 1. Get your API key
-
-Get a free API key at **[football-data.org](https://football-data.org)** — takes 30 seconds, no credit card.
-
-### 2. Configure input
+### 1. Configure input
 
 In the Apify Console, open the actor and fill in the input form (or pass JSON via API):
 
 ```json
 {
-  "footballDataApiKey": "your_key_here",
   "mode": "live"
 }
 ```
+
+`footballDataApiKey` is optional — the actor works without a key. Supply your own free key from [football-data.org](https://football-data.org) for dedicated rate limits (10 req/min).
 
 For other modes, set `mode` accordingly and add `matchId` (for `match`) or `teamId` (for `full`).
 
@@ -55,7 +52,7 @@ Results land in the run's default dataset — one match/standings record per ite
 Add `teamId` to fetch only completed matches for a specific team:
 
 ```json
-{ "footballDataApiKey": "your_key_here", "mode": "full", "teamId": 773 }
+{ "mode": "full", "teamId": 773 }
 ```
 
 Useful for building single-team dashboards or tracking a specific country through the tournament.
